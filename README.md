@@ -1,5 +1,5 @@
-# Audio to mp3 converter
-This is a script to handle bulk audio to mp3 conversion.  
+# Audio/Video to mp3 converter
+This is a script to handle bulk audio and video to mp3 conversion.  
 It uses the [Pydub](https://pypi.org/project/pydub/) python package.
 
 ## How to use the script
