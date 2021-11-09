@@ -1,6 +1,10 @@
 import os
 from pydub import AudioSegment
 
+
+# Ask if to delete previous unconverted files
+delete_initial = str(input("Do you wish to delete initial file formats?(y/N): ")).upper()
+
 for directory in os.listdir("."):
 
 	if not os.path.isfile(directory): 	# if f is a directory
@@ -18,7 +22,10 @@ for directory in os.listdir("."):
 					print(f"Converting [{f}]")
 					m4a_audio.export("{}/{}".format(directory, str(f).split(str(audio_format))[0]+".mp3"), format="mp3")
 					# delete previous format
-					os.remove("{}/{}".format(directory, f))
+					if delete_initial == "Y":
+						os.remove("{}/{}".format(directory, f))
+					else:
+						pass
 				except:
 					print("Error. Check if file format is supported.")
 
@@ -39,7 +46,10 @@ for directory in os.listdir("."):
 				print(f"Converting [{directory}]")
 				m4a_audio.export("{}".format(str(directory).split(str(audio_format))[0]+".mp3"), format="mp3")
 				# delete previous format
-				os.remove(directory)
+				if delete_initial == "Y":
+					os.remove(directory)
+				else:
+					pass
 			except:
 				print("Error. Check if file format is supported.")
 
