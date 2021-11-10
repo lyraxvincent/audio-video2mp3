@@ -36,6 +36,9 @@ for directory in os.listdir("."):
 			else:
 				print("File format is already mp3.")
 
+		# Show we have exited current directory
+		print("-------------------------\n")
+
 	elif os.path.isfile(directory):
 
 		audio_format = str(directory).split(".")[-1]
