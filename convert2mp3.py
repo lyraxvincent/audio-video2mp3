@@ -20,7 +20,7 @@ for directory in os.listdir("."):
 				try:
 					m4a_audio = AudioSegment.from_file("{}/{}".format(directory, str(f)), str(audio_format))
 					print(f"Converting [{f}]")
-					m4a_audio.export("{}/{}".format(directory, str(f).split(str(audio_format))[0]+".mp3"), format="mp3")
+					m4a_audio.export("{}/{}".format(directory, str(f).split(str(audio_format))[0]+"mp3"), format="mp3")
 					# delete previous format
 					if delete_initial == "Y":
 						os.remove("{}/{}".format(directory, f))
@@ -47,7 +47,7 @@ for directory in os.listdir("."):
 			try:
 				m4a_audio = AudioSegment.from_file("{}".format(str(directory)), str(audio_format))
 				print(f"Converting [{directory}]")
-				m4a_audio.export("{}".format(str(directory).split(str(audio_format))[0]+".mp3"), format="mp3")
+				m4a_audio.export("{}".format(str(directory).split(str(audio_format))[0]+"mp3"), format="mp3")
 				# delete previous format
 				if delete_initial == "Y":
 					os.remove(directory)
